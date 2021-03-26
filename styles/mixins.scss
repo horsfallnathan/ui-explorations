@@ -1,0 +1,34 @@
+// Mixin to help with responsive styling
+
+@mixin add-breakpoint($breakpoint) {
+  @if $breakpoint==xs {
+    @media only screen and (max-width: 20rem) {
+      @content;
+    }
+  }
+  @if $breakpoint==xs_inv {
+    @media only screen and (min-width: 19rem) {
+      @content;
+    }
+  }
+  @if $breakpoint==sm {
+    @media only screen and (max-width: 41.9rem) {
+      @content;
+    }
+  }
+  @if $breakpoint==sm_inv {
+    @media only screen and (min-width: 42rem) {
+      @content;
+    }
+  }
+  @if $breakpoint==md {
+    @media only screen and (max-width: 65.9rem) {
+      @content;
+    }
+  }
+  @if $breakpoint==md_inv {
+    @media only screen and (min-width: 66rem) {
+      @content;
+    }
+  }
+}
