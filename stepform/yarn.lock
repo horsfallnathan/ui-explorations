@@ -2519,6 +2519,11 @@ globals@^11.1.0:
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
+google-charts@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/google-charts/-/google-charts-2.0.0.tgz#29cf307f2e250c743daf5161816f14d0df2c6498"
+  integrity sha512-wxtwJTvA9MhFGCkMtUYtM+b1gQ8R6zSdQOxflRTAGr83+sd0bRDfrn1HaPIpxnqI75cImQBDp0ZTUXuwLhgPzA==
+
 graceful-fs@^4.1.11:
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
@@ -3234,7 +3239,7 @@ log-symbols@^2.2.0:
   dependencies:
     chalk "^2.0.1"
 
-loose-envify@^1.1.0:
+loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -4198,6 +4203,15 @@ process@^0.11.10:
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
   integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
 
+prop-types@^15.7.2:
+  version "15.7.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+  integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.8.1"
+
 psl@^1.1.28:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/psl/-/psl-1.8.0.tgz#9326f8bcfb013adcc005fdff056acce020e51c24"
@@ -4297,6 +4311,23 @@ react-dom@^17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.2"
+
+react-google-charts@^3.0.15:
+  version "3.0.15"
+  resolved "https://registry.yarnpkg.com/react-google-charts/-/react-google-charts-3.0.15.tgz#30759a470f48336e744fd383d054122b039a1ff2"
+  integrity sha512-78s5xOQOJvL+jIewrWQZEHtlVk+5Yh4zZy+ODA1on1o1FaRjKWXxoo4n4JQl1XuqkF/A9NWque3KqM6pMggjzQ==
+  dependencies:
+    react-load-script "^0.0.6"
+
+react-is@^16.8.1:
+  version "16.13.1"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
+  integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-load-script@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/react-load-script/-/react-load-script-0.0.6.tgz#db6851236aaa25bb622677a2eb51dad4f8d2c258"
+  integrity sha512-aRGxDGP9VoLxcsaYvKWIW+LRrMOzz2eEcubTS4NvQPPugjk2VvMhow0wWTkSl7RxookomD1MwcP4l5UStg5ShQ==
 
 react@^17.0.2:
   version "17.0.2"

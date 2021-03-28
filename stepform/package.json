@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "google-charts": "^2.0.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-google-charts": "^3.0.15"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
