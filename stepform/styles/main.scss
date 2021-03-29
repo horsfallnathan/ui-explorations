@@ -77,7 +77,7 @@ input[type="date"] {
 .main-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .mp-form-input-text {
@@ -281,20 +281,36 @@ input[type="date"] {
   border-bottom: 1px solid $dark-1;
 }
 .sf-channels {
-  padding: 2rem 0;
   @include add-breakpoint(sm_inv) {
+    padding: 2rem 0;
     border-right: 1px solid $dark-1;
+  }
+  @include add-breakpoint(sm) {
+    grid-template-columns: repeat(5, 100%);
+    grid-template-areas: "a b c d e";
+    display: grid;
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
   }
 }
 .sf-channel {
   padding: 0.5rem;
+  min-width: 100%;
   &.active {
     background-color: $dark-4;
     border-right: 2px solid $brand;
+    @include add-breakpoint(sm) {
+      grid-area: a;
+      border-bottom: 1px solid $brand;
+      border-right: 0px;
+    }
   }
 }
 .sf-fields {
-  padding: 2rem 0;
+  padding-bottom: 1rem;
+  @include add-breakpoint(sm_inv) {
+    padding: 2rem 0;
+  }
 }
 
 input[type="range"] {
