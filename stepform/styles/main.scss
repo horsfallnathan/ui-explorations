@@ -26,6 +26,9 @@ html {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-rendering: optimizeLegibility;
 }
+a {
+  cursor: pointer;
+}
 p {
   font-size: 1.2rem;
 }
@@ -92,23 +95,24 @@ input[type="date"]::-webkit-datetime-edit {
   outline: 2px solid transparent;
   outline-offset: -2px;
   padding: 0.25rem 0.75rem;
-  background-color: $dark-2;
+  background-color: $dark-4;
   color: $subTextColor;
   appearance: textfield;
   -webkit-appearance: textfield;
   box-shadow: none;
 
   &.title {
-    padding: 0.25rem 0;
-    background-color: $dark-3;
+    padding: 1.5rem 0.75rem;
+    // background-color: $dark-3;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid $dark-1;
     line-height: 1.25;
-    font-size: 1.875rem;
+    font-size: 1.475rem;
     width: 100%;
     margin-bottom: 2rem;
     @include add-breakpoint(sm_inv) {
+      padding: 2rem 0.75rem;
       line-height: 1.25;
       font-size: 2.25rem;
       overflow-wrap: normal;
@@ -131,11 +135,8 @@ input[type="date"]::-webkit-datetime-edit {
   margin-top: 1rem;
   margin-bottom: 1rem;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  @include add-breakpoint(sm_inv) {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 .mp-form-element {
   display: flex;
@@ -239,7 +240,8 @@ input[type="date"]::-webkit-datetime-edit {
 }
 .button {
   background-color: lighten($color: $brand, $amount: 5);
-  border: 2px solid transparent;
+  // border: 2px solid transparent;
+  border-color: transparent;
   color: inherit;
   font-family: inherit;
   cursor: pointer;
@@ -252,6 +254,15 @@ input[type="date"]::-webkit-datetime-edit {
   font-size: 1em;
   transition: all 0.2s ease;
   position: relative;
+  &.ghost {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    &:hover,
+    &:focus {
+      background-color: $dark-4;
+    }
+  }
   &:hover {
     background-color: $brand;
   }
@@ -301,13 +312,21 @@ input[type="date"]::-webkit-datetime-edit {
 .sf-channel {
   padding: 0.5rem;
   min-width: 100%;
+  font-size: 1.25rem;
+  display: inline-block;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+  @include add-breakpoint(sm) {
+    padding: 1rem 0;
+    border-bottom: 2px solid $brand;
+  }
   &.active {
     background-color: $dark-4;
     border-right: 2px solid $brand;
     @include add-breakpoint(sm) {
-      grid-area: a;
-      border-bottom: 1px solid $brand;
       border-right: 0px;
+      grid-area: a;
+      background-color: $dark-3;
     }
   }
 }
@@ -370,8 +389,7 @@ input[type="range"] {
   }
 }
 
-input,
-button {
+input {
   outline: none;
   &:focus,
   &:hover {

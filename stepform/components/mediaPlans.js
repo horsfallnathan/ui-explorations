@@ -2,9 +2,7 @@ import React, { useRef, useState } from "react";
 import { FormField, NavButton, currFormatter } from "./stepComponents";
 
 const channels = [
-  {
-    title: "SEO",
-  },
+  { title: "SEO" },
   { title: "Display" },
   { title: "Social" },
   { title: "Affiliate" },
@@ -86,13 +84,15 @@ export default function MediaPlans() {
    * @param {Event} e React synthetic event
    * @param {string} dir Navigation direction -> "left" || "right"
    */
-  const handleChannelNav = (e, dir) => {
+  const handleChannelNav = (e, dir, idx = null) => {
     e.preventDefault();
 
-    // get index of next page
+    // get index of next page. If index (idx) is passed directly use that value otherwise calculate the new index
     const newActiveChannel =
-      (dir === "left" ? activeChannel - 1 : activeChannel + 1) %
-      channels.length;
+      idx !== null
+        ? idx
+        : (dir === "left" ? activeChannel - 1 : activeChannel + 1) %
+          channels.length;
     // update current page
     setActiveChannel(newActiveChannel);
 
@@ -144,20 +144,21 @@ export default function MediaPlans() {
         <div className="step-form-cont">
           <p className="mp-form-label">What's your budget per channel?</p>
           <div className="step-form">
-            <div className="sf-channels">
+            <nav className="sf-channels">
               {channels.map(({ title }, i) => {
                 return (
-                  <p
+                  <button
                     key={`sf-ch-${i}`}
-                    className={`sf-channel ${
-                      activeChannel === i ? "active" : ""
+                    onClick={(e) => handleChannelNav(e, null, i)}
+                    className={`button ghost sf-channel${
+                      activeChannel === i ? " active" : ""
                     }`}
                   >
                     {title}
-                  </p>
+                  </button>
                 );
               })}
-            </div>
+            </nav>
             <div className="sf-fields">
               <FormField
                 channelState={channelState}
@@ -184,13 +185,13 @@ export default function MediaPlans() {
         <div className="mp-form-actions controls">
           <button
             className={`button mp-button`}
-            onClick={(e) => handleChannelNav(e, path)}
+            // onClick={(e) => handleChannelNav(e, path)}
           >
             Copy
           </button>
           <button
             className={`button mp-button`}
-            onClick={(e) => handleChannelNav(e, path)}
+            // onClick={(e) => handleChannelNav(e, path)}
           >
             Save
           </button>
